@@ -1,4 +1,4 @@
-name: test-ros
+name: ros2-setup-test
 
 on: 
   push:
