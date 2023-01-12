@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu-focal-ros-foxy-desktop
+      image: rostooling/setup-ros-docker:ubuntu-focal-ros-foxy-ros-base-latest
     steps:
       - uses: ros-tooling/setup-ros@v0.3
         with:
