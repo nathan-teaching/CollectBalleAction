@@ -13,3 +13,5 @@ jobs:
     steps:
       - uses: ros-tooling/setup-ros@v0.3
       - uses: ros-tooling/action-ros-ci@0.2.7
+        with:
+          target-ros2-distro: foxy
