@@ -9,14 +9,7 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: rostooling/setup-ros-docker:ubuntu-focal-ros-foxy-ros-base-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: ros-tooling/setup-ros@v0.3
-        with:
-          required-ros-distributions: foxy
       - uses: ros-tooling/action-ros-ci@0.2.7
-        with:
-          package-name: tennis_court
-          target-ros2-distro: foxy
