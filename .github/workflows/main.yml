@@ -12,19 +12,5 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      
-      - run: apt update && sudo apt install locales
-      - run: locale-gen en_US en_US.UTF-8
-      - run: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-      - run: export LANG=en_US.UTF-8
-      - run: apt install software-properties-common
-      - run: add-apt-repository universe
-      - run: apt update && sudo apt install curl
-      - run: curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-      - run: echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-      - run: apt update && apt upgrade
-      - run: apt install ros-foxy-desktop python3-argcomplete
-      - run: apt install ros-dev-tools
-      
-      - run: source /opt/ros/foxy/setup.bash
-      - run: mkdir ros2_ws && cd ros2_ws
+      - name: Setup ROS environment
+          uses: ros-tooling/setup-ros@0.4.2
