@@ -53,8 +53,6 @@ target_link_libraries(gui_tennis_court_overlay ${GAZEBO_LIBRARIES}
 ament_export_libraries(gui_tennis_court_overlay)
 
 if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  ament_lint_auto_find_test_dependencies()
 endif()
 
 ament_python_install_package(scripts/)
